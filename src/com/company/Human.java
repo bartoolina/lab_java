@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.devices.Car;
+import com.company.devices.Phone;
+
 public class Human {
     String firstName;
     String lastName;
@@ -39,5 +42,9 @@ public class Human {
             }
 
         }
+    }
+
+    public String toString() {
+        return firstName + " " + lastName;
     }
 }

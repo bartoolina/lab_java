@@ -1,4 +1,6 @@
-package com.company;
+package com.company.devices;
+
+import com.company.Human;
 
 public class Car {
     private final String model;
@@ -15,6 +17,9 @@ public class Car {
         return this.model;
     }
 
+    public String toString() {
+        return model + " " + cost;
+    }
 //    public void setOwner(Human owner) {
 //        this.owner = owner;
 //    }
