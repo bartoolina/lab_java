@@ -1,11 +1,11 @@
-package com.company;
+package com.company.creaturs;
 
 import java.io.File;
 
 public class Animal {
     // zdefiniowac raz i tylko przy tworzeniu obiektu
-    final String species;
-    private Double weight;
+    public final String species;
+    protected Double weight;
     public String name;
     File pic;
     // static - stała
@@ -29,7 +29,7 @@ public class Animal {
 
     }
 
-    void feed(){
+    public void feed(){
         if ( weight > 0){
             weight++;
             System.out.println(name + " thx for food bro, my weight is now " + weight);
@@ -38,7 +38,7 @@ public class Animal {
         }
     }
 
-    void takeForWalk(){
+    public void takeForWalk(){
         if (weight > 0) {
             weight--;
             if (weight <= 0) {

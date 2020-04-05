@@ -1,16 +1,17 @@
 package com.company.devices;
 
-import com.company.Human;
+import com.company.creaturs.Human;
 
-public class Car {
-    private final String model;
+public class Car extends Device{
+//    private final String model;
     private final int numberOfDoors;
-    public int cost;
-    public Human owner;
+//    public int cost;
+//    public Human owner;
+    public Car(String mark, String model, Integer yearOfProduction, int numberOfDoors) {
+        super(mark, model, yearOfProduction);
 
-    public Car(String model, int numberOfDoors) {
-        this.model = model;
         this.numberOfDoors = numberOfDoors;
+
     }
 
     public String getModel() {

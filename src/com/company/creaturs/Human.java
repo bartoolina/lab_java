@@ -1,15 +1,24 @@
-package com.company;
+package com.company.creaturs;
 
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-public class Human {
-    String firstName;
-    String lastName;
+public class Human extends Animal{
+    public String firstName;
+    public String lastName;
     Phone phone;
-    Animal pet;
+    public Animal pet;
     private Car car;
     private Double salary = 3000.0;
+
+    public static final Double DEFAULT_HUMAN_WEIGHT = 70.0;
+
+    public Human() {
+//        super(species);
+
+        super("Homo Sapiens");
+        this.weight = DEFAULT_HUMAN_WEIGHT;
+    }
 
     public Double getSalary() {
         return salary;
