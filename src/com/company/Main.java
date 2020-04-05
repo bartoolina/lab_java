@@ -33,7 +33,7 @@ public class Main {
 		me.pet.name = "Myszojeleń";
 		me.pet.feed();
 
-		Car audi =new Car("Audi", 3);
+		Car audi =new Car("Audi", "A3", 2006, 3);
 		audi.cost = 20000;
 		me.setCar(audi);
 		audi.owner = me;
@@ -56,5 +56,10 @@ public class Main {
 		System.out.println("sprawdzanie klas");
 		System.out.println(dog instanceof Human);
 		System.out.println(dog instanceof Animal);
+
+
+		me.sale();
+		audi.sale();
+		dog.sale();
     }
 }

@@ -2,7 +2,7 @@ package com.company.devices;
 
 import com.company.creaturs.Human;
 
-public class Device {
+public abstract class Device implements com.company.Seleable{
     protected final String model;
     private final String mark;
     protected final Integer yearOfProduction;
@@ -13,5 +13,10 @@ public class Device {
         this.model = model;
         this.mark = mark;
         this.yearOfProduction = yearOfProduction;
+    }
+
+    @Override
+    public void sale() {
+        System.out.println("sprzedane");
     }
 }

@@ -2,7 +2,7 @@ package com.company.creaturs;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Edible, com.company.Seleable{
     // zdefiniowac raz i tylko przy tworzeniu obiektu
     public final String species;
     protected Double weight;
@@ -51,6 +51,26 @@ public class Animal {
         } else {
             weight = 0.0;
             System.out.println(name + " I can't walk, I'm dead.");
+        }
+    }
+
+    @Override
+    public void beEaten() {
+        if (this instanceof Human) {
+            System.out.println("bez kanibalizmu");
+//            throw new Exception("kanibalizm!");
+        } else {
+            System.out.println("papa");
+            this.weight = 0.0;
+        }
+    }
+
+    @Override
+    public void sale() {
+        if (this instanceof Human){
+            System.out.println("Nie da się już handlować ludzmi. Nie te czasy.");
+        } else {
+            System.out.println("sprzedane");
         }
     }
 }
