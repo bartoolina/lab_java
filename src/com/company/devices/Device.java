@@ -1,8 +1,9 @@
 package com.company.devices;
 
+import com.company.Seleable;
 import com.company.creaturs.Human;
 
-public abstract class Device implements com.company.Seleable{
+public abstract class Device implements Seleable {
     protected final String model;
     private final String mark;
     protected final Integer yearOfProduction;
@@ -16,7 +17,13 @@ public abstract class Device implements com.company.Seleable{
     }
 
     @Override
-    public void sale() {
-        System.out.println("sprzedane");
+    public void sale(Human buyer, Human seller, int price) {
+        if (buyer.cash >= price) {
+            buyer.cash -= price;
+            seller.cash += price;
+        } else {
+            System.out.println(buyer.firstName + " " + buyer.lastName +
+                    " nie ma wystarczajacej gotowki, zeby kupic " + this.mark);
+        }
     }
 }

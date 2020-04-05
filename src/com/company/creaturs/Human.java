@@ -3,13 +3,14 @@ package com.company.creaturs;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-public class Human extends Animal{
+public class Human extends Animal {
     public String firstName;
     public String lastName;
     Phone phone;
     public Animal pet;
     private Car car;
     private Double salary = 3000.0;
+    public Double cash = 1000.0;
 
     public static final Double DEFAULT_HUMAN_WEIGHT = 70.0;
 
@@ -33,20 +34,15 @@ public class Human extends Animal{
     }
 
     public void setCar(Car car) {
-        if (car.owner != null)
-        {
-            System.out.println("jezdisz samochodem " + car.owner.firstName + " "+ car.owner.lastName);
+        if (car.owner != null) {
+            System.out.println("jezdisz samochodem " + car.owner.firstName + " " + car.owner.lastName);
             this.car = car;
-        }
-        else {
-            if (car.cost < 10*salary)
-            {
+        } else {
+            if (car.cost < 10 * salary) {
                 System.out.println("Kupiles samochod: " + car.getModel());
                 this.car = car;
 
-            }
-            else
-            {
+            } else {
                 System.out.println("Nie stac Cie.");
             }
 
@@ -55,5 +51,10 @@ public class Human extends Animal{
 
     public String toString() {
         return firstName + " " + lastName;
+    }
+
+    @Override
+    public void sale(Human buyer, Human seller, int price) {
+        System.out.println("nie mozna sprzedac ani kupic czlowieka.");
     }
 }

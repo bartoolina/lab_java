@@ -1,8 +1,10 @@
 package com.company.creaturs;
 
+import com.company.Seleable;
+
 import java.io.File;
 
-public class Animal implements Edible, com.company.Seleable{
+public class Animal implements Edible, Seleable {
     // zdefiniowac raz i tylko przy tworzeniu obiektu
     public final String species;
     protected Double weight;
@@ -65,12 +67,25 @@ public class Animal implements Edible, com.company.Seleable{
         }
     }
 
+//    @Override
+//    public void sale() {
+//        if (this instanceof Human){
+//            System.out.println("Nie da się już handlować ludzmi. Nie te czasy.");
+//        } else {
+//            System.out.println("sprzedane");
+//        }
+//    }
+
     @Override
-    public void sale() {
-        if (this instanceof Human){
-            System.out.println("Nie da się już handlować ludzmi. Nie te czasy.");
+    public void sale(Human buyer, Human seller, int price) {
+        if (buyer.cash >= price) {
+            buyer.cash -= price;
+            seller.cash += price;
+            System.out.println(seller.firstName + " " + seller.lastName + " sprzedal " +
+                    buyer.firstName + " " + buyer.lastName + " " + this.name + " za cene " +
+                    price);
         } else {
-            System.out.println("sprzedane");
+            System.out.println(buyer.firstName + " " + buyer.lastName + " nie ma wystarczajacej gotowki.");
         }
     }
 }
